@@ -13,16 +13,16 @@ class Day01 {
         var max = 0;
         for (elfInv in input) {
             var totalCalories:Int = 0;
-
             for (food in elfInv) totalCalories += food;
             if (max < totalCalories) max = totalCalories;
-
         }
 
         return max;
     }
+
     static function part2(input:Array<Array<Int>>):Int {
         var totalCalories:Array<Int> = [];
+
         for (elfInv in input) {
             var total:Int = 0;
             for (food in elfInv) total += food;
@@ -32,8 +32,6 @@ class Day01 {
         totalCalories.sort((a, b) -> b - a);
 
         return totalCalories[0]+totalCalories[1]+totalCalories[2];
-
-        // return max;
     }
 
     static function loadFile(file:String):Array<Array<Int>> {
@@ -47,9 +45,7 @@ class Day01 {
             if (line == "") {
                 input.push(inv);
                 inv = [];
-            } else {
-                inv.push(Std.parseInt(line));
-            }
+            } else inv.push(Std.parseInt(line));
         }
         iterator.close();
         return input;
