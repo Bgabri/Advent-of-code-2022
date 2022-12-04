@@ -8,7 +8,6 @@ class DayXX {
     }
 
     static function part1(input:Array<Array<Int>>):Int {
-        trace(input);
         return 0;
     }
     static function part2(input:Array<Array<Int>>):Int {
