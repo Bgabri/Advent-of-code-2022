@@ -21,7 +21,9 @@ class Day04 {
 
         var total = 0;
         for (pairs in input) {
-            if ((pairs[0] <= pairs[2] && pairs[2] <= pairs[1]) ||
+            if ((pairs[2] <= pairs[0] && pairs[0] <= pairs[3]) ||
+                (pairs[2] <= pairs[1] && pairs[1] <= pairs[3]) ||
+                (pairs[0] <= pairs[2] && pairs[2] <= pairs[1]) ||
                 (pairs[0] <= pairs[3] && pairs[3] <= pairs[1])) total ++;
         }
         return total;
