@@ -13,13 +13,13 @@ class Day10 {
         var strength = 0;
         for (i=>instruction in input) {
             switch(i) {
-                 case( 20): strength +=  20*register;
-                 case( 60): strength +=  60*register;
-                 case(100): strength += 100*register;
-                 case(140): strength += 140*register;
-                 case(180): strength += 180*register;
-                 case(220): strength += 220*register;
-                 case( _ ):
+                case( 20): strength +=  20*register;
+                case( 60): strength +=  60*register;
+                case(100): strength += 100*register;
+                case(140): strength += 140*register;
+                case(180): strength += 180*register;
+                case(220): strength += 220*register;
+                case( _ ):
             }
             if (instruction[0] == "addx") register += Std.parseInt(instruction[1]);
         }
@@ -31,8 +31,8 @@ class Day10 {
 	  var newInp:Array<Array<String>> = [["noop"]];
         for (i=>instruction in input) {
 	      
-             if (instruction[0] == "addx") newInp.push(["noop"]);
-             newInp.push(instruction);
+            if (instruction[0] == "addx") newInp.push(["noop"]);
+            newInp.push(instruction);
         }
         return newInp;
     }
@@ -41,7 +41,6 @@ class Day10 {
          input = reOder(input);
         var register = 1;
         var crt:Array<Array<String>> = [for(i in 0...6) [for (j in 0...40) "."]];
-        var sprite = "........................................";
         var pixelPos = 0;
         var row = 0;
         for (i=>instruction in input) {

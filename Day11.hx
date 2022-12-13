@@ -46,6 +46,7 @@ class Day11 {
 
         var lcm = 1.;
         for (monkey in input) lcm*= monkey.test;
+        
         for (r in 0...10000) {
             for (i=>monkey in input) {
 
@@ -70,8 +71,7 @@ class Day11 {
             if (max0 < val) {
                 max1 = max0;
                 max0 = val;
-            }
-            else if (max1 < val) {
+            } else if (max1 < val) {
                 max1 = val;
             }
         }

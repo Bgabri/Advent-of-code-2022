@@ -1,7 +1,7 @@
 using StringTools;
 // haxe --interp --main Day12.hx
 
-class Test {
+class Day12 {
     var start = {x:0, y:0};
     var end   = {x:0, y:0};
 
@@ -13,9 +13,8 @@ class Test {
 
     function part1(input:Array<Array<Int>>):Int {
         var current = start;
-        var shortest:Array<{x:Int, y:Int}> = [];
-        var weights = [for (i in input) [for (j in i) 123546] ];
-        var visited = [for (i in input) [for (j in i) false] ];
+        var weights = [for (i in input) [for (j in i) 123546]];
+        var visited = [for (i in input) [for (j in i) false]];
         weights[start.y][start.x] = 0;
 
         while (current.x != end.x || current.y != end.y) {
@@ -24,7 +23,7 @@ class Test {
 
             var cVal = weights[current.y][current.x];
 
-            for (n in ns) weights[n.y][n.x] =  cVal+ 1;
+            for (n in ns) weights[n.y][n.x] = cVal+ 1;
 
             visited[current.y][current.x] = true;
         }
@@ -63,7 +62,6 @@ class Test {
 
     function part2(input:Array<Array<Int>>):Int {
         var current = end;
-        var shortest:Array<{x:Int, y:Int}> = [];
         var weights = [for (i in input) [for (j in i) 123546] ];
         var visited = [for (i in input) [for (j in i) false] ];
         weights[current.y][current.x] = 0;
